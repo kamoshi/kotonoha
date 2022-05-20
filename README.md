@@ -1,2 +1,2 @@
-# kotonoha
-Hugo SSG theme
+# Kotonoha
+A simple theme for the Hugo static site generator
