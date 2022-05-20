@@ -1,0 +1,2 @@
+# kotonoha
+Hugo SSG theme
