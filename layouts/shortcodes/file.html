@@ -1,0 +1,18 @@
+{{/*
+  This shortcode loads the content of a file and displays it inside of a codeblock.
+  Inputs:
+    src - path to the file
+    abs - absolute path to the file 
+    lang - language used in the file
+*/}}
+{{- $lang := default "" (.Get "lang") -}}
+{{- if isset .Params "abs" -}}
+  {{- $file := .Get "abs" | readFile -}}
+  {{- (print "```" $lang "\n" $file "\n```") | markdownify -}}
+{{- else -}}
+  {{- $file := .Page.Resources.GetMatch (.Get "src") -}}
+  {{- (print "```" $lang "\n" $file.Content "\n```") | markdownify -}}
+{{- end -}}
+
+
+
