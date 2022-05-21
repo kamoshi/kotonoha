@@ -1,0 +1,138 @@
+
+
+// markers in the corners
+%article-marker {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  display: block;
+  height: 2em;
+  width: 2em;
+  border-radius: 5px;
+}
+
+
+article {
+  position: relative;
+  margin: 1.5em auto;
+  padding: 0 1em 1em 1em;
+  line-height: 1.6em;
+  width: calc(100vw - 3em);
+  max-width: 40em;
+  font-size: var(--fs-md);
+
+  header {
+    margin: 0 -1em 1em -1em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    box-shadow: var(--shadow-l);
+    background: var(--momiji);
+    background-color: var(--c-purewhite);
+    
+    h1 {
+      margin-bottom: 0.2em;
+    }
+  }
+
+  .tag-line {
+    font-size: var(--fs-sm);
+    line-height: 1.2em;
+
+    .date {
+      margin-right: 0.2em;
+    }
+  }
+
+  ul.tags {
+    display: inline;
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+
+    a {
+      display: block;
+      border-radius: 1em;
+      padding: 0.1em 0.25em;
+      text-decoration: none;
+      line-height: 1em;
+      font-size: var(--fs-xs);
+      background-color: var(--c-purewhite);
+      border: 2px solid var(--c-primary);
+    }
+  }
+
+  :not(header) img {
+    display: block;
+    max-width: 100%;
+    max-height: 50vh;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  // Display red marker around the article
+  &.marker {
+    &::before {
+      @extend %article-marker;
+      border-left: 5px solid var(--c-secondary);
+      border-top: 5px solid var(--c-secondary);
+      left: -0.7rem;
+      top: -0.7rem;
+    }
+
+    &::after {
+      @extend %article-marker;
+      border-right: 5px solid var(--c-secondary);
+      border-bottom: 5px solid var(--c-secondary);
+      right: -0.7rem;
+      bottom: -0.7rem;
+    }
+  }
+
+  // Embedded photo
+  .simple-photo {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+
+    @media (min-width: 650px) {
+      max-width: 75%;
+    }
+
+    .href-wrap,
+    img {
+      display: block;
+      border-radius: 5px;
+    }
+
+    .href-wrap {
+      box-shadow: rgba(0, 0, 0, .2) 1.95px 1.95px 3px;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 30em;
+      border-radius: 5px;
+    }
+  }
+
+  > ul {
+    padding-left: 32px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}

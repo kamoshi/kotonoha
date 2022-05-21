@@ -1,0 +1,59 @@
+article.list {
+  .page-list {
+    list-style: none;
+    margin-top: 1em;
+    padding: 0;
+    
+    li {
+      display: flex;
+      flex-flow: row nowrap;
+      margin-top: 0.5rem;
+    }
+    
+    .date {
+      display: inline-block;
+      margin: {
+        left: 1em;
+        right: 1em;
+      }
+    }
+  }
+
+  &.code {
+    .lang-logo {
+      width: 1.5em;
+      height: 1.5em;
+      min-width: 1.5em;
+    }
+  }
+
+  &.languages {
+    header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 0.5em;
+    }
+
+    .lang-logo {
+      max-height: 2em;
+      width: 2em;
+      height: 2em;
+      margin-right: 0.5em;
+    }
+  }
+
+  &.aoc {
+    .page-list {
+      display: flex;
+      flex-flow: column nowrap;
+      
+      .aoc-stars {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+  
+

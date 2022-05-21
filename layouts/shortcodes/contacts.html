@@ -1,0 +1,16 @@
+<h2>Contacts</h2>
+<section class="contacts">
+    {{ with .Get "email" }}
+    <div class="box">
+        <img width="38" height="25" src=/static/svg/email.svg>
+        <p>{{ . }}</p>
+    </div>
+    {{ end }}
+
+    {{ with .Get "discord" }}
+    <div class="box">
+        <img width="38" height="30" src="/static/svg/discord.svg">
+        <p>{{ . }}</p>
+    </div>
+    {{ end }}
+</section>

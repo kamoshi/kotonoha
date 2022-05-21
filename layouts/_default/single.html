@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="marker">
+  <header>
+    <h1>{{.Title}}</h1>
+    <div class="tag-line">
+      <span class="date">
+        {{ .Date.Format "January 2, 2006" }}
+      </span>
+      <ul class="tags">
+        {{ range .Params.Languages }}
+          <li><a href="/languages/{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+        {{ range .Params.Tags }}
+          <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ partial "github" . }}
+  </header>
+  {{.Content}}
+</article>
+{{ end }}
+

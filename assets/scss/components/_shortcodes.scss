@@ -1,0 +1,104 @@
+
+// Block
+div.block {
+  min-width: 20em;
+
+  img {
+    display: inline-block;
+  }
+}
+
+// Flex
+div.flex-row-wrap {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+img.icon {
+  display: inline;
+}
+
+// kanji progress bar
+.kanji-progress {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 16em;
+  width: 10em;
+
+  .info-text {
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    text-align: center;
+  }
+
+  .track {
+    position: relative;
+    display: flex;
+    flex-flow: column-reverse;
+    min-width: 2em;
+    min-height: 2em;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background: white;
+  }
+
+  .progress {
+    background-color: var(--c-secondary);
+  }
+
+  .aya {
+    background-image: url("/static/ayarun.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+    min-width: 6em;
+  }
+}
+
+// licenses
+table.acknowledgements {
+  margin: auto;
+
+  td {
+    padding: 0 1em;
+  }
+}
+
+// doujin
+table.albums {
+  padding: 1em;
+  background-color: white;
+
+  .image-row td {
+    padding: 0 1em;
+  }
+
+  .images {
+    display: flex;
+    max-width: 100%;
+  }
+}
+
+section.contacts {
+  .box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  img {
+    max-width: 2em;
+    height: auto;
+    margin: 0;
+    margin-right: 0.5em;
+  }
+
+  p {
+    display: block;
+    margin: 0;
+  }
+}

@@ -1,0 +1,14 @@
+{{ if not .Params.nobreadcrumbs }}
+  {{ $url := replace .Permalink .Site.BaseURL "" }}
+  {{ $.Scratch.Add "path" .Site.BaseURL }}
+  <ol class="breadcrumbs">
+    <li><a href="/">home</a></li>
+    {{ range $index, $element := split $url "/" }}
+      {{ $.Scratch.Add "path" $element }}
+      {{ if ne $element "" }}
+        <li><a href='{{ $.Scratch.Get "path" }}'>{{ . }}</a></li>
+        {{ $.Scratch.Add "path" "/" }}
+      {{ end }}
+    {{ end }}
+  </ol>
+{{ end }}

@@ -1,0 +1,9 @@
+{{ $context := . }}
+{{ with $.Page.Resources.GetMatch (.Get "src") }}
+  {{ $img := .Resize "1000x webp photo" }}
+  <div class="simple-photo">
+    <a class="href-wrap" href="{{ .RelPermalink }}">
+      <img width="{{ $img.Width }}" height="{{ $img.Height }}" src="{{ $img.RelPermalink }}" alt='{{ $context.Get "alt" }}'>
+    </a>
+  </div>
+{{ end }}

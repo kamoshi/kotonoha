@@ -1,0 +1,20 @@
+<table class="acknowledgements">
+    <thead>
+        <th>Project name</th>
+        <th>License</th>
+    </thead>
+    <tbody>
+        {{ range .Site.Data.licenses }}
+        <tr>
+            <td>
+                <a href="{{ .link }}">
+                    {{ .name }}
+                </a>
+            </td>
+            <td>
+                {{ .license }}
+            </td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
