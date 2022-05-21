@@ -60,6 +60,10 @@ article {
       font-size: var(--fs-xs);
       background-color: var(--c-purewhite);
       border: 2px solid var(--c-primary);
+
+      &:not(:last-child) {
+        margin-right: 0.1em;
+      }
     }
   }
 
