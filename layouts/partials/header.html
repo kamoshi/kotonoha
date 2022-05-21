@@ -5,12 +5,12 @@
     <a href="/" class="logo">
       <img height="48px" width="51px" src="/static/svg/aya.svg" alt="">
       <div class="logotype">
-        <span class="logo-text">kamoshi.org</span>
-        {{ with .Site.Params.header.subtitle }}
+        <span class="logo-text">{{- .Site.Title -}}</span>
+        {{- with .Site.Params.header.subtitle -}}
         <span class="logo-text-sub" id="splash-container" aria-hidden="true">
           {{ . }}
         </span>
-        {{ end }}
+        {{- end -}}
       </div>
     </a>
   </div>

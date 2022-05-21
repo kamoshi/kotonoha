@@ -7,14 +7,11 @@
       {{ end }}
     </header>
 
-    <ul class="page-list">
+    <div class="list-container">
       {{ range .Pages }}
-        <li>
-          <span class="date">{{ time.Format "Jan 02, 2006" .Date }}</span>
-          <a href="{{.Permalink}}">{{.Title}}</a>
-        </li>
+        <span class="date">{{ time.Format "Jan 02, 2006" .Date }}</span>
+        <a href="{{.Permalink}}">{{.Title}}</a>
       {{ end }}
-    </ul>
-
+    </div>
   </article>
 {{ end }}

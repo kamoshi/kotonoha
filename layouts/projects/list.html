@@ -6,25 +6,22 @@
 
     {{.Content}}
 
-    <ul class="page-list">
+    <div class="list-container">
       {{ range .Pages }}
-        <li>
+        {{ with .Params.tech }}
+        {{ $pageLang := . }}
+        {{ with index $.Site.Data.tech (default "unknown" .) }}
+          <a class="page-lang-link" href='{{ "/tech/" | relLangURL }}{{ (index $pageLang 0) | urlize }}'>
+            <img class="lang-logo" src='{{ .file }}' alt='{{ .name }}' title="{{ .name }}">
+          </a>
+        {{ end }}
+        {{ end }}
 
-          {{ with .Params.tech }}
-          {{ $pageLang := . }}
-          {{ with index $.Site.Data.tech (default "unknown" .) }}
-            <a class="page-lang-link" href='{{ "/tech/" | relLangURL }}{{ (index $pageLang 0) | urlize }}'>
-              <img class="lang-logo" src='{{ .file }}' alt='{{ .name }}' title="{{ .name }}">
-            </a>
-          {{ end }}
-          {{ end }}
+        <span class="date">{{ time.Format "Jan 02, 2006" .Date }}</span>
 
-          <span class="date">{{ time.Format "Jan 02, 2006" .Date }}</span>
-
-          <a href="{{.Permalink}}">{{.Title}}</a>
-        </li>
+        <a href="{{.Permalink}}">{{.Title}}</a>
       {{ end }}
-    </ul>
+    </div>
 
   </article>
 {{ end }}

@@ -1,25 +1,16 @@
 article.list {
-  .page-list {
-    list-style: none;
+  .list-container {
+    display: grid;
+    grid-template-columns: 8em 1fr;
+    row-gap: 0.3em;
     margin-top: 1em;
-    padding: 0;
-    
-    li {
-      display: flex;
-      flex-flow: row nowrap;
-      margin-top: 0.5rem;
-    }
-    
-    .date {
-      display: inline-block;
-      margin: {
-        left: 1em;
-        right: 1em;
-      }
-    }
   }
 
   &.code {
+    .list-container {
+      grid-template-columns: 2em 8em 1fr;
+    }
+
     .lang-logo {
       width: 1.5em;
       height: 1.5em;
