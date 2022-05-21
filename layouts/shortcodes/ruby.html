@@ -1,11 +1,20 @@
-{{/*
+{{- /*
   Display ruby for a given string
   Example input: "言,こと;の;葉,は"
-*/}}
+*/ -}}
 
-{{ with .Get 0}}
+{{- with .Get 0 -}}
 <ruby>
-  {{/* Generate the ruby markup. Single line avoids unintended spaces */}}
-  {{ range split . ";"}}{{ $item := split . "," }}{{ $ruby := index $item 1 }}{{ index $item 0 }}{{ if $ruby }}<rp>(</rp><rt>{{ $ruby }}</rt><rp>)</rp>{{ else }}<rt></rt>{{ end }}{{ end }}
+  {{- /* Generate the ruby markup */ -}}
+  {{- range split . ";" -}}
+    {{- $item := split . "," -}}
+    {{- $ruby := index $item 1 -}}
+    {{- index $item 0 -}}
+    {{- if $ruby -}}
+      <rp>(</rp><rt>{{- $ruby -}}</rt><rp>)</rp>
+    {{- else -}}
+      <rt></rt>
+    {{- end -}}
+  {{- end -}}
 </ruby>
-{{ end }}
+{{- end -}}
