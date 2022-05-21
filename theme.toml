@@ -1,6 +1,6 @@
 name = "Kotonoha"
 license = "MIT"
-licenselink = ""
+licenselink = "https://github.com/kamoshi/kotonoha/blob/main/LICENSE"
 description = "A simple theme for the Hugo SSG"
 homepage = "https://github.com/kamoshi/kotonoha"
 tags = []
