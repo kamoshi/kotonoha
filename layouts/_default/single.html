@@ -7,8 +7,8 @@
         {{ .Date.Format "January 2, 2006" }}
       </span>
       <ul class="tags">
-        {{ range .Params.Languages }}
-          <li><a href="/languages/{{ . | urlize }}">{{ . }}</a></li>
+        {{ range .Params.Tech }}
+          <li><a href="/tech/{{ . | urlize }}">{{ . }}</a></li>
         {{ end }}
         {{ range .Params.Tags }}
           <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
