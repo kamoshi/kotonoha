@@ -11,14 +11,14 @@
 
 {{ with .Params.styles }}
   {{ range . }}
-    <link rel="stylesheet" href="{{ . | absURL }}">
+  <link rel="stylesheet" href="{{ . | absURL }}">
   {{ end }}
 {{ end }}
 
 <!-- JS -->
 {{ with .Params.scripts }}
   {{ range . }}
-    <script src="{{ . | absURL }}"></script>
+  <script src="{{ . | absURL }}" defer></script>
   {{ end }}
 {{ end }}
 
