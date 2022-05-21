@@ -1,0 +1,18 @@
+haskell:
+  name: Haskell
+  file: /static/svg/tech/haskell.svg
+hugo:
+  name: Hugo
+  file: /static/svg/tech/hugo.svg
+python:
+  name: Python
+  file: /static/svg/tech/python.svg
+rust:
+  name: Rust
+  file: /static/svg/tech/rust.svg
+svelte:
+  name: Svelte
+  file: /static/svg/tech/svelte.svg
+typescript:
+  name: TypeScript
+  file: /static/svg/tech/typescript.svg

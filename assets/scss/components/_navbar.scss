@@ -22,9 +22,8 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
 nav {
   position: relative;
   z-index: 10;
-	background-color: var(--c-primary);
-  background-image: url("/static/momiji-blob.svg"), url("/static/momiji-blob.svg");
-  background-position: 0 0, 16px 16px;
+  background: var(--momiji);
+  background-color: var(--c-primary);
 
   a {
     color: var(--c-white);
