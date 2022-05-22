@@ -10,15 +10,39 @@ article.list {
     margin-top: 1em;
   }
 
-  &.code {
+  &.tech {
     .list-container {
-      grid-template-columns: 2em 8em 1fr;
+      grid-template-columns: 8em 1fr auto;
     }
 
-    .lang-logo {
-      width: 1.5em;
-      height: 1.5em;
-      min-width: 1.5em;
+    .tech {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 0.3em;
+
+      img {
+        height: 1em;
+        margin: 0;
+      }
+    }
+  }
+
+  &.aoc {
+    .list-container {
+      grid-template-columns: 3em 1fr auto;
+    }
+
+    .tech {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 0.3em;
+
+      img {
+        height: 1em;
+        margin: 0;
+      }
     }
   }
 
@@ -35,25 +59,6 @@ article.list {
       width: 2em;
       height: 2em;
       margin-right: 0.5em;
-    }
-  }
-
-  &.aoc {
-    .list-container {
-      grid-template-columns: 3em 1fr auto;
-    }
-
-    .tech {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      gap: 0.3em;
-    }
-
-    .tech-logo {
-      max-width: 1em;
-      max-height: 1em;
-      margin: 0;
     }
   }
 }

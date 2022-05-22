@@ -5,8 +5,13 @@
 
 <div class="tech">
   {{- range $tech -}}
+    {{ $pageLang := . }}
     {{- with index $.Site.Data.tech . -}}
-      <img class="tech-logo" src="{{- .file -}}">
+      {{- $path := "tech/" | relLangURL -}}
+      {{- $tag := $pageLang | urlize }}
+      <a href="{{- path.Join $path $tag -}}">
+        <img src="{{.file}}" alt='{{.name}}' title="{{.name}}">
+      </a>
     {{- end -}}
   {{- end -}}
 </div>

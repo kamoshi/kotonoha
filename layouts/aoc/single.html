@@ -6,17 +6,8 @@
       <span class="date">
         {{- .Date.Format "January 2, 2006" -}}
       </span>
-
       {{- partial "aoc/stars" . -}}
-
-      <ul class="tags">
-        {{- range .Params.Tech -}}
-          <li><a href="/tech/{{- . | urlize -}}">{{- . -}}</a></li>
-        {{- end -}}
-        {{- range .Params.Tags -}}
-          <li><a href="/tags/{{- . | urlize -}}">{{- . -}}</a></li>
-        {{- end -}}
-      </ul>
+      {{- partial "tags" . -}}
     </div>
   </header>
 

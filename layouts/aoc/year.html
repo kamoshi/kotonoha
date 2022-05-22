@@ -9,9 +9,7 @@
   <div class="list-container">
     {{- range .Pages.ByParam "day" -}}
       {{- partial "aoc/stars" . -}}
-
       <a href="{{.Permalink}}">{{.Title}}</a>
-
       {{- partial "tech" . -}}
     {{ end }}
   </div>

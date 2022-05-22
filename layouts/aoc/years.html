@@ -7,9 +7,7 @@
   <div class="list-container">
     {{- range .Pages.ByParam "year" -}}
       {{- partial "aoc/totalstars" . -}}
-      
       <a href="{{- .Permalink -}}">{{- .Title -}}</a>
-      
       {{- partial "tech" . -}}
     {{- end -}}
   </div>

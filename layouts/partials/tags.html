@@ -1,0 +1,8 @@
+<ul class="tags">
+  {{- range .Params.Tech -}}
+    <li><a href="/tech/{{- . | urlize -}}">{{- . -}}</a></li>
+  {{- end -}}
+  {{- range .Params.Tags -}}
+    <li><a href="/tags/{{- . | urlize -}}">{{- . -}}</a></li>
+  {{- end -}}
+</ul>
