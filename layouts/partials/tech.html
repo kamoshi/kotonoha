@@ -1,0 +1,12 @@
+{{- $tech := default slice .Params.tech -}}
+{{- range .RegularPagesRecursive -}}
+  {{- $tech = union $tech .Params.tech -}}
+{{- end -}}
+
+<div class="tech">
+  {{- range $tech -}}
+    {{- with index $.Site.Data.tech . -}}
+      <img class="tech-logo" src="{{- .file -}}">
+    {{- end -}}
+  {{- end -}}
+</div>

@@ -1,0 +1,13 @@
+{{- $stars := default 0 .Params.stars -}}
+
+{{- if .BundleType -}}
+  {{- range .RegularPagesRecursive -}}
+    {{- $stars = math.Max $stars .Params.stars -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $blank := math.Sub 2 $stars -}}
+<span class="aoc-stars">
+  {{- range seq $stars -}}★{{- end -}}
+  {{- range seq $blank -}}☆{{- end -}}
+</span>
