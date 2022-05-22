@@ -1,6 +1,6 @@
+$marker-color: 5px solid var(--c-secondary);
+$marker-offset: -0.7rem;
 
-
-// markers in the corners
 %article-marker {
   content: "";
   position: absolute;
@@ -14,12 +14,33 @@
 
 article {
   position: relative;
-  margin: 1.5em auto;
-  padding: 0 1em 1em 1em;
-  line-height: 1.6em;
-  width: calc(100vw - 3em);
   max-width: 40em;
+  line-height: 1.6em;
   font-size: var(--fs-md);
+
+  &.center {
+    margin: 0 auto;
+  }
+
+  &.marker {
+    padding: 0 1em;
+
+    &::before {
+      @extend %article-marker;
+      border-left: $marker-color;
+      border-top: $marker-color;
+      left: $marker-offset;
+      top: $marker-offset;
+    }
+  
+    &::after {
+      @extend %article-marker;
+      border-right: $marker-color;
+      border-bottom: $marker-color;
+      right: $marker-offset;
+      bottom: $marker-offset;
+    }
+  }
 
   header {
     margin: 0 -1em 1em -1em;
@@ -41,28 +62,25 @@ article {
     .date {
       margin-right: 0.2em;
     }
-  }
 
-  ul.tags {
-    display: inline;
-    list-style: none;
-
-    li {
-      display: inline-block;
-    }
-
-    a {
-      display: block;
-      border-radius: 1em;
-      padding: 0.1em 0.25em;
-      text-decoration: none;
-      line-height: 1em;
-      font-size: var(--fs-xs);
-      background-color: var(--c-purewhite);
-      border: 2px solid var(--c-primary);
-
-      &:not(:last-child) {
+    ul {
+      display: inline;
+      list-style: none;
+  
+      li {
+        display: inline-block;
+      }
+  
+      a {
+        display: block;
+        border-radius: 1em;
+        padding: 0.1em 0.25em;
         margin-right: 0.1em;
+        text-decoration: none;
+        line-height: 1em;
+        font-size: var(--fs-xs);
+        background-color: var(--c-purewhite);
+        border: 2px solid var(--c-primary);
       }
     }
   }
@@ -74,25 +92,6 @@ article {
     margin: {
       left: auto;
       right: auto;
-    }
-  }
-
-  // Display red marker around the article
-  &.marker {
-    &::before {
-      @extend %article-marker;
-      border-left: 5px solid var(--c-secondary);
-      border-top: 5px solid var(--c-secondary);
-      left: -0.7rem;
-      top: -0.7rem;
-    }
-
-    &::after {
-      @extend %article-marker;
-      border-right: 5px solid var(--c-secondary);
-      border-bottom: 5px solid var(--c-secondary);
-      right: -0.7rem;
-      bottom: -0.7rem;
     }
   }
 

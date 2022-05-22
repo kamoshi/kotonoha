@@ -1,5 +1,5 @@
 {{- define "main" -}}
-<article class="marker">
+<article class="marker center">
   <header>
     <h1>{{- .Title -}}</h1>
     <div class="tag-line">
@@ -8,10 +8,10 @@
       </span>
       <ul class="tags">
         {{- range .Params.Tech -}}
-          <li><a href="/tech/{{ . | urlize }}">{{- . -}}</a></li>
+          <li><a href="/tech/{{- . | urlize -}}">{{- . -}}</a></li>
         {{- end -}}
         {{ range .Params.Tags }}
-          <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+          <li><a href="/tags/{{- . | urlize -}}">{{- . -}}</a></li>
         {{- end -}}
       </ul>
     </div>

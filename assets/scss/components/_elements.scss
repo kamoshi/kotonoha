@@ -57,26 +57,6 @@ code:not(.highlight code),
   }
 }
 
-
-// NOTICE
-section.notice {
-	padding: 1rem;
-	border-radius: 5px;
-  background-color: #fff;
-  font-size: 0.9rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 1.95px 1.95px 3px;
-  max-width: 600px;
-  margin: 1rem auto;
-
-  &:not(:first-child) {
-    margin-top: 2rem;
-  }
-
-  &:not(:last-child) {
-    margin-bottom: 2rem;
-  }
-}
-
 .breadcrumbs {
   display: flex;
   flex-direction: row;

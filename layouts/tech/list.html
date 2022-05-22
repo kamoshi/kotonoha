@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article class="list languages">
+  <article class="list languages center">
     <header>
       {{ with index $.Site.Data.tech (default "unknown" .Title) }}
         <img class="lang-logo" src="{{ .file }}">

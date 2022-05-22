@@ -3,7 +3,7 @@
     {{- partial "head.html" . -}}
     <body>
         {{- partial "header.html" . -}}
-        <main>
+        <main {{ if .IsHome }} class="home" {{ end }}>
           {{- block "main" . -}}{{- end -}}
         </main>
         {{- partial "footer.html" . -}}

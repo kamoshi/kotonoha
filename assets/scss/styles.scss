@@ -2,6 +2,7 @@
 @use './reset';
 @use './root';
 @use './base';
+@use './layout';
 
 // Components
 @use './components/navbar';
@@ -14,3 +15,4 @@
 @use './components/chroma';
 @use './components/map';
 @use './components/github';
+@use './components/aside';

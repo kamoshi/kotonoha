@@ -78,27 +78,3 @@ table.albums {
     max-width: 100%;
   }
 }
-
-section.contacts {
-  .box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    &:not(:last-child) {
-      margin-bottom: 0.5em;
-    }
-  }
-
-  img {
-    max-width: 2em;
-    height: auto;
-    margin: 0;
-    margin-right: 0.5em;
-  }
-
-  p {
-    display: block;
-    margin: 0;
-  }
-}

@@ -1,0 +1,8 @@
+{{- with .Site.Params.aside.notice -}}
+<section class="card notice">
+  <h2>{{- .Header -}}</h2>
+  {{- range .Content -}}
+    <p>{{- . -}}</p>
+  {{- end -}}
+</section>
+{{- end -}}

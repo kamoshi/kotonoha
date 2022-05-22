@@ -1,0 +1,18 @@
+{{- with .Site.Params.aside.contact -}}
+<section class="card contact">
+  <h2>Contact</h2>
+  <div class="grid">
+
+    {{- with .email -}}
+      <img width="38" height="25" src=/static/svg/email.svg>
+      <a class="text" href="mailto:{{- . -}}">{{- . -}}</a>
+    {{- end -}}
+
+    {{- with .discord -}}
+      <img width="38" height="30" src="/static/svg/discord.svg">
+      <span class="text">{{- . -}}</span>
+    {{- end -}}
+
+  </div>
+</section>
+{{- end -}}

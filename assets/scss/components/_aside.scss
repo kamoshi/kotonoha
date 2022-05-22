@@ -1,0 +1,27 @@
+aside {
+  .latest .pages {
+    display: grid;
+    grid-template-columns: 4em 1fr;
+    row-gap: 0.2em;
+  }
+
+  .contact {
+    .grid {
+      display: grid;
+      grid-template-columns: 3em 1fr;
+      row-gap: 0.5em;
+    }
+
+    img {
+      max-width: 2em;
+      height: auto;
+      margin: 0;
+      margin-right: 0.5em;
+    }
+
+    .text {
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+}
