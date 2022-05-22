@@ -23,11 +23,11 @@ main {
 }
 
 aside {
-  max-width: 40em;
+  width: 40em;
   margin-top: 3em;
 
   @media (min-width: consts.$bp-lg) {
-    max-width: 24em;
+    width: 24em;
     margin-top: 0;
     margin-left: 3em;
   }
