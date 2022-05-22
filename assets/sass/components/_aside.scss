@@ -5,6 +5,11 @@ aside {
     row-gap: 0.2em;
   }
 
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
   .contact {
     .grid {
       display: grid;

@@ -4,12 +4,12 @@
   <div class="grid">
 
     {{- with .email -}}
-      <img width="38" height="25" src=/static/svg/email.svg>
+      <img width="38" height="25" src=/static/svg/email.svg alt="email">
       <a class="text" href="mailto:{{- . -}}">{{- . -}}</a>
     {{- end -}}
 
     {{- with .discord -}}
-      <img width="38" height="30" src="/static/svg/discord.svg">
+      <img width="38" height="30" src="/static/svg/discord.svg" alt="discord">
       <span class="text">{{- . -}}</span>
     {{- end -}}
 
