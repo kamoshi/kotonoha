@@ -22,27 +22,6 @@ main {
   }
 }
 
-aside {
-  width: 40em;
-  margin-top: 3em;
-
-  @media (min-width: consts.$bp-lg) {
-    width: 24em;
-    margin-top: 0;
-    margin-left: 3em;
-  }
-
-  section {
-    margin-top: 1em;
-
-    @media (min-width: consts.$bp-md) {
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-  }
-}
-
 .card {
   padding: 1em;
   border-radius: 5px;
