@@ -2,39 +2,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.SiteDescription }}{{ end }}">
-<title>{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}</title>
+<title>{{- if .Title -}}{{- .Title -}}{{- else -}}{{- .Site.Title -}}{{- end -}}</title>
 
 <!-- CSS -->
-{{ $sass_options := (dict "transpiler" "dartsass" "outputStyle" "compressed") }}
-{{ $style := resources.Get "scss/styles.scss" | resources.ToCSS $sass_options | resources.Minify | resources.Fingerprint }}
-<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+{{- $sass_options := (dict "transpiler" "dartsass" "outputStyle" "compressed") -}}
+{{- $style := resources.Get "sass/styles.scss" | resources.ToCSS $sass_options | resources.Minify | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{$style.Permalink}}" integrity="{{$style.Data.Integrity}}">
 
-{{ with .Params.styles }}
-  {{ range . }}
-  <link rel="stylesheet" href="{{ . | absURL }}">
-  {{ end }}
-{{ end }}
+{{- with .Params.styles -}}
+  {{- range . -}}
+  <link rel="stylesheet" href="{{- . | absURL -}}">
+  {{- end -}}
+{{- end -}}
 
 <!-- JS -->
-{{ with .Params.scripts }}
-  {{ range . }}
-  <script src="{{ . | absURL }}" defer></script>
-  {{ end }}
-{{ end }}
+{{- with .Params.scripts -}}
+  {{- range . -}}
+  <script src="{{- . | absURL -}}" defer></script>
+  {{- end -}}
+{{- end -}}
 
 <!-- KaTeX -->
-{{ if .Params.math }}{{ partial "katex.html" . }}{{ end }}
+{{- if .Params.math -}}{{- partial "katex.html" . -}}{{- end -}}
 
-<!-- Fira Code -->
+<!-- Monospace font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"> 
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.ico" sizes="any">
