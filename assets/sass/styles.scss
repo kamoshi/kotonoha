@@ -4,6 +4,13 @@
 @use './base';
 @use './layout';
 
+// Common
+@use './common/blockquote';
+@use './common/code';
+@use './common/heading';
+@use './common/list';
+@use './common/table';
+
 // Components
 @use './components/navbar';
 @use './components/footer';
@@ -11,8 +18,8 @@
 @use './components/pagelist';
 @use './components/shortcodes';
 @use './components/timeline';
-@use './components/elements';
 @use './components/chroma';
 @use './components/map';
 @use './components/github';
 @use './components/aside';
+@use './components/footnotes';
