@@ -65,6 +65,7 @@ article {
 
     ul {
       display: inline;
+      margin-left: 0.5em;
       list-style: none;
   
       li {
@@ -75,7 +76,7 @@ article {
         display: block;
         border-radius: 1em;
         padding: 0.1em 0.25em;
-        margin-right: 0.1em;
+        margin-right: 0.25em;
         text-decoration: none;
         line-height: 1em;
         font-size: var(--fs-xs);
