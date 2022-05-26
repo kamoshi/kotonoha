@@ -22,6 +22,14 @@
   {{- end -}}
 {{- end -}}
 
+{{- /*  SPLASH  */ -}}
+{{ if .Site.Params.header.enableSplash }}
+  {{- with resources.Get "splash.ts" -}}
+    {{ $app := . | js.Build (dict "minify" true) | resources.Fingerprint }}
+    <script type="text/javascript" src="{{ $app.RelPermalink }}" integrity="{{ $app.Data.Integrity }}" defer></script>
+  {{- end -}}
+{{- end -}}
+
 <!-- KaTeX -->
 {{- if .Params.math -}}{{- partial "katex.html" . -}}{{- end -}}
 

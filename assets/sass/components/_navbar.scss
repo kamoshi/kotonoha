@@ -119,11 +119,25 @@ nav {
       }
 
       .logo-text-sub {
+        display: block;
         font-size: $nav-dim-inner * 0.225;
         line-height: $nav-dim-inner * 0.225;
-        min-height: 11px;
       }
     }
+  }
+
+  .typing-wrap {
+    display: inline-block;
+  }
+
+  #splash-container {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-right: auto;
+    width: 100%;
+    animation:
+      typing 1.25s steps(20, end) forwards,
+      blink-caret .75s step-end 4;
   }
 
   ul {
@@ -178,4 +192,14 @@ nav {
       }
     }
   }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-right: 2px solid white; }
+  50% { border-right: transparent; }
 }
