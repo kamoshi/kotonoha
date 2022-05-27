@@ -1,17 +1,10 @@
 <nav>
-  <input id="nav-toggle" type="checkbox">
-
   {{- partial "navbar/logo" . -}}
 
-  <label for="nav-toggle" class="burger">
+  <input id="nav-toggle" type="checkbox" class="hidden">
+  <label for="nav-toggle" class="burger" tabindex="0">
     <span></span>
   </label>
 
-  <ul>
-    {{ range sort .Site.Menus.main "Weight" }}
-      <li>
-        <a href="{{ .URL }}">{{ .Name | title }}</a>
-      </li>
-    {{ end }}
-  </ul>
+  {{- partial "navbar/links" . -}}
 </nav>

@@ -1,3 +1,6 @@
+@use '../consts' as consts;
+
+
 // colors
 $nav-color-link: #3b4850;
 $nav-color-link-hover: #fafafa;
@@ -20,68 +23,6 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
 
 
 nav {
-  position: relative;
-  z-index: 10;
-  background: var(--momiji);
-  background-color: var(--c-primary);
-
-  a {
-    color: var(--c-white);
-    text-decoration: none;
-  }
-
-  .burger {
-    display: inline-flex;
-    float: right;
-    margin: $nav-padding;
-    height: $nav-dim-inner;
-    width: $nav-dim-inner;
-    align-items: center;
-    justify-content: center;
-    transform: scale(0.8);
-    cursor: pointer;
-
-    span {
-      position: relative;
-      display: block;
-      height: 3px;
-      width: 80%;
-      background-color: var(--c-white);
-      transition: background-color 100ms linear;
-
-      &::before {
-        @extend %burger-wing;
-        top: -1rem;
-      }
-
-      &::after {
-        @extend %burger-wing;
-        top: 1rem;
-      }
-    }
-  }
-
-  #nav-toggle {
-    display: none;
-
-    // Animate toggle burger
-    &:checked ~ .burger > span {
-      background-color: transparent;
-
-      &::before {
-        transform: translateY(1rem) rotateZ(45deg);
-      }
-
-      &::after {
-        transform: translateY(-1rem) rotateZ(-45deg);
-      }
-    }
-
-    // Hide list if the burger is closed
-    &:not(:checked) ~ ul {
-      display: none;
-    }
-  }
 
   .logo-wrapper {
     display: inline-block;
@@ -139,56 +80,184 @@ nav {
       typing 1.25s steps(20, end) forwards,
       blink-caret .75s step-end 4;
   }
+}
+
+nav {
+  position: relative;
+  z-index: 10;
+  background: var(--momiji);
+  background-color: var(--c-primary);
+
+  @media (min-width: consts.$bp-md) {
+    display: flex;
+  }
+
+  a {
+    color: var(--c-white);
+    text-decoration: none;
+  }
 
   ul {
-    list-style-type: none;
-    display: block;
+    margin: 0;
+  }
 
-    li {
-      font-size: 18px;
-      text-align: center;
+  .hidden {
+    display: none;
+  }
 
-      a {
-        display: block;
-        width: 100%;
-        padding: 0.2rem;
+  #nav-toggle {
+    &:checked ~ .burger > span {
+      background-color: transparent;
 
-        &:hover {
-          background-color: hsla(0, 0%, 0%, 0.20);
-        }
+      &::before {
+        transform: translateY(1rem) rotateZ(45deg);
+      }
+
+      &::after {
+        transform: translateY(-1rem) rotateZ(-45deg);
+      }
+    }
+
+    // Hide list if the burger is closed
+    &:not(:checked) ~ .nav-links {
+      display: none;
+
+      @media (min-width: consts.$bp-md) {
+        display: inline-flex;
       }
     }
   }
-}
+  
+  .burger {
+    display: inline-flex;
+    float: right;
+    margin: $nav-padding;
+    height: $nav-dim-inner;
+    width: $nav-dim-inner;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    cursor: pointer;
 
-
-@media only screen and (min-width: 650px) {
-  nav {
-    display: flex;
-
-    .burger {
+    @media (min-width: consts.$bp-md) {
       display: none;
     }
 
-    #nav-toggle:not(:checked) ~ ul {
-      display: inline-flex;
+    span {
+      position: relative;
+      display: block;
+      height: 3px;
+      width: 80%;
+      background-color: var(--c-white);
+      transition: background-color 100ms linear;
+
+      &::before {
+        @extend %burger-wing;
+        top: -1rem;
+      }
+
+      &::after {
+        @extend %burger-wing;
+        top: 1rem;
+      }
+    }
+  }
+  
+  .nav-links-entry,
+  .dropdown-box-entry {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  @media (min-width: consts.$bp-md) {
+    .dropdown-box-entry:hover {
+      background-color: #ededed;
+    }
+  }
+
+  .nav-item {
+    display: block;
+    width: 100%;
+    padding: 0.2rem;
+    cursor: pointer;
+    color: white;
+
+    @media (min-width: consts.$bp-md) {
+      display: inline-block;
+      margin: 0.1rem;
+      border-radius: 5px;
     }
 
-    ul {
+    &:hover {
+      background-color: hsla(0, 0%, 0%, 0.20);
+    }
+
+    &.mobile {
+      @media (min-width: consts.$bp-md) {
+        display: none;
+      }
+    }
+
+    &.desktop {
+      display: none;
+
+      @media (min-width: consts.$bp-md) {
+        display: block;
+      }
+    }
+  }
+
+  .nav-links {
+    list-style-type: none;
+    display: block;
+
+    @media (min-width: consts.$bp-md) {
+      display: inline-flex;
       width: fit-content;
       height: $nav-dim-inner;
       margin: $nav-padding;
       align-items: center;
       display: inline-flex;
       gap: $nav-padding;
+    }
 
-      li {
-        display: inline-block;
+    input:checked + .dropdown-box {
+      display: block;
 
-        a {
-          margin: 0.1rem;
-          border-radius: 5px;
+      @media (min-width: consts.$bp-md) {
+        display: none;
+      }
+    }
+
+    @media (min-width: consts.$bp-md) {
+      .nav-links-entry:hover,
+      .nav-links-entry:focus-within {
+        > .dropdown-box {
+          display: block;
         }
+      }
+    }
+  }
+
+  .dropdown-box {
+    display: none;
+    list-style-type: none;
+
+    @media (min-width: consts.$bp-md) {
+      position: absolute;
+      z-index: 20;
+      background-color: white;
+      box-shadow: var(--shadow-m);
+      border-radius: 2px;
+      transform: translateX(-33%);
+    }
+
+    .nav-item {
+      font-size: var(--fs-md);
+
+      @media (min-width: consts.$bp-md) {
+        color: black;
+        background-color: transparent;
       }
     }
   }
