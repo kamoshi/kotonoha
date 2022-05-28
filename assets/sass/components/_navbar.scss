@@ -169,12 +169,6 @@ nav {
     text-align: center;
   }
 
-  @media (min-width: consts.$bp-md) {
-    .dropdown-box-entry:hover {
-      background-color: #ededed;
-    }
-  }
-
   .nav-item {
     display: block;
     width: 100%;
@@ -190,20 +184,6 @@ nav {
 
     &:hover {
       background-color: hsla(0, 0%, 0%, 0.20);
-    }
-
-    &.mobile {
-      @media (min-width: consts.$bp-md) {
-        display: none;
-      }
-    }
-
-    &.desktop {
-      display: none;
-
-      @media (min-width: consts.$bp-md) {
-        display: block;
-      }
     }
   }
 
@@ -221,19 +201,14 @@ nav {
       gap: $nav-padding;
     }
 
-    input:checked + .dropdown-box {
-      display: block;
-
-      @media (min-width: consts.$bp-md) {
-        display: none;
-      }
-    }
-
     @media (min-width: consts.$bp-md) {
       .nav-links-entry:hover,
       .nav-links-entry:focus-within {
         > .dropdown-box {
-          display: block;
+          pointer-events: all;
+          visibility: visible;
+          opacity: 1;
+          transform: translateX(-33%);
         }
       }
     }
@@ -241,25 +216,36 @@ nav {
 
   .dropdown-box {
     display: none;
+    position: absolute;
     list-style-type: none;
-
+    padding: 0.25em 0;
+    z-index: 1000;
+    transform: translateX(-33%);
+    border-radius: 2px;
+    background-color: white;
+    box-shadow: var(--shadow-m);
+    transition: all 0.1s;
+    
     @media (min-width: consts.$bp-md) {
-      position: absolute;
-      z-index: 20;
-      background-color: white;
-      box-shadow: var(--shadow-m);
-      border-radius: 2px;
-      transform: translateX(-33%);
+      pointer-events: none;
+      display: block;
+      visibility: hidden;
+      opacity: 0;
     }
+  }
 
-    .nav-item {
-      font-size: var(--fs-md);
+  .dropdown-box-entry {
+    width: 100%;
+    padding: 0 0.5em;
+    font-size: var(--fs-md);
 
-      @media (min-width: consts.$bp-md) {
-        color: black;
-        background-color: transparent;
-      }
+    &:hover {
+      background-color: #eeeeee;
     }
+  }
+
+  .dropdown-item {
+    color: black;
   }
 }
 

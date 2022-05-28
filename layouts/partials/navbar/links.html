@@ -2,34 +2,20 @@
   {{- range sort .Site.Menus.main "Weight" -}}
   <li class="nav-links-entry">
 
+    <a class="nav-item" href="{{- .URL -}}">{{- .Name | title -}}</a>
+
     {{- if .Params.dropdown -}}
-      {{- $key := sha1 .URL -}}
-
-      {{- /*  Link-like item  */ -}}
-      <a class="nav-item desktop" href="{{- .URL -}}">{{- .Name | title -}}</a>
-      <label class="nav-item mobile" for="{{- $key -}}" tabindex="0">
-        {{- .Name | title -}}
-      </label>
-
-      <input id="{{- $key -}}" type="checkbox" class="hidden">
-
-      {{- with $.Site.GetPage .URL -}}
+    {{- with $.Site.GetPage .URL -}}
       <ul class="dropdown-box">
         {{- range .Pages -}}
           <li class="dropdown-box-entry">
-
-            {{- /*  Link-like item  */ -}}
-            <a class="nav-item" href="{{- .RelPermalink -}}">
+            <a class="dropdown-item" href="{{- .RelPermalink -}}">
               {{- .Title -}}
             </a>
-
           </li>
         {{- end -}}
       </ul>
-      {{- end -}}
-    {{- else -}}
-      {{- /*  Link-like item  */ -}}
-      <a class="nav-item" href="{{- .URL -}}">{{- .Name | title -}}</a>
+    {{- end -}}
     {{- end -}}
 
   </li>
