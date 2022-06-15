@@ -1,0 +1,9 @@
+{{- /* Tooltip
+  Display tooltip for a given piece of text on mouse hover
+*/ -}}
+
+<span class="tooltip">
+  {{- .Get 0 -}}
+  <span class="tooltip-box">{{- .Get 1 -}}</span>
+  {{- /* remove whitespace */ -}}
+</span>
