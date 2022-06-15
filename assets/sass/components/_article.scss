@@ -23,7 +23,6 @@ article {
   }
 
   &.marker {
-    padding: 0 1em;
 
     &::before {
       @extend %article-marker;
@@ -43,7 +42,7 @@ article {
   }
 
   header {
-    margin: 0 -1em 1em -1em;
+    margin-bottom: 1em;
     padding: 0.5em 1em;
     border-radius: 5px;
     box-shadow: var(--shadow-l);
@@ -75,7 +74,7 @@ article {
   
       a {
         display: block;
-        border-radius: 1em;
+        border-radius: 0.4em;
         padding: 0.1em 0.25em;
         margin-right: 0.25em;
         text-decoration: none;
