@@ -11,6 +11,16 @@
     <section class="year">
       <h3>{{ .year }}</h3>
 
+      {{- with .events -}}
+      <section>
+        <ul>
+        {{- range . -}}
+          <li>{{ . }}</li>
+        {{- end -}}
+        </ul>
+      </section>
+      {{- end -}}
+
       {{- range .months -}}
       <section>
         <h4>{{- .month -}}</h4>
