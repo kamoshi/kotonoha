@@ -55,26 +55,3 @@ img.icon {
   }
 }
 
-// licenses
-table.acknowledgements {
-  margin: auto;
-
-  td {
-    padding: 0 1em;
-  }
-}
-
-// doujin
-table.albums {
-  padding: 1em;
-  background-color: white;
-
-  .image-row td {
-    padding: 0 1em;
-  }
-
-  .images {
-    display: flex;
-    max-width: 100%;
-  }
-}
