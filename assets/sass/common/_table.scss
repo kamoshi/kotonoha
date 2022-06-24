@@ -6,6 +6,10 @@ table {
   th, td {
     padding: 0.2em 0.5em;
     border: 1px solid #dbdbdb;
+
+    p {
+      white-space: pre-line;
+    }
   }
 
   th {
@@ -15,5 +19,14 @@ table {
   &.albums .images {
     display: flex;
     max-width: 100%;
+  }
+
+  &.lyrics {
+    font-size: var(--fs-sm);
+
+    td {
+      padding: 0.5em;
+      line-height: 1.5em;
+    }
   }
 }

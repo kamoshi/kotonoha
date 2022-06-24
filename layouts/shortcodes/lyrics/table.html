@@ -1,0 +1,12 @@
+<table class="lyrics">
+  <thead>
+    <tr>
+      {{- range .Params -}}
+        <th>{{- . -}}</th>
+      {{- end -}}
+    </tr>
+  </thead>
+  <tbody>
+    {{- .Inner -}}
+  </tbody>
+</table>
