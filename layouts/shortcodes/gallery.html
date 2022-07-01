@@ -1,0 +1,16 @@
+{{- $relPath := .Get "path" -}}
+{{- $resources := .Page.Resources.Match (path.Join $relPath "*" ) -}}
+
+<section class="gallery">
+  <h2 id="gallery">Gallery</h2>
+  <div class="container">
+    {{- range where $resources "MediaType.MainType" "image" -}}
+    {{- $context := . -}}
+    {{- with .Resize "500x" -}}
+    <a class="item" href="{{- $context.RelPermalink -}}">
+      <img src="{{- .RelPermalink -}}" width="{{- .Width -}}" height="{{- .Height -}}">
+    </a>
+    {{- end -}}
+    {{- end -}}
+  </div>
+</section>
