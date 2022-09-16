@@ -17,10 +17,10 @@ main {
   flex: 1 0 auto;
 
   // momiji
-  background-image: url("/static/momiji.png");
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: calc(2em + 16vw);
+  // background-image: url("/static/momiji.png");
+  // background-repeat: no-repeat;
+  // background-position: bottom left;
+  // background-size: calc(2em + 16vw);
 
   @media screen and (min-width: consts.$bp-md) {
     --fs-xs: 0.833rem;
