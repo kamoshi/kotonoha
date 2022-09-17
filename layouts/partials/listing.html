@@ -1,0 +1,21 @@
+<h2>Index of {{ print "/" (path.Dir .Path) "/" -}}</h2>
+
+<hr />
+
+<ul>
+  {{ range .Pages }}
+    <li>
+      <a href="{{- .RelPermalink -}}">
+        {{- path.Base (path.Dir .Path) -}}
+      </a>
+    </li>
+  {{ end }}
+  {{- range .Resources -}}
+    <li>
+      <a href="{{- .RelPermalink -}}">
+        {{- .Name -}}
+      </a>
+      {{- len .Content -}}
+    </li>
+  {{- end -}}
+</ul>
