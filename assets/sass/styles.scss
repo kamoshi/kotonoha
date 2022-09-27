@@ -3,6 +3,8 @@
 @use './root';
 @use './base';
 @use './layout';
+@use './chroma';
+@use './utils';
 
 // Common
 @use './common/blockquote';
@@ -19,7 +21,6 @@
 @use './components/pagelist';
 @use './components/shortcodes';
 @use './components/timeline';
-@use './components/chroma';
 @use './components/map';
 @use './components/github';
 @use './components/aside';
