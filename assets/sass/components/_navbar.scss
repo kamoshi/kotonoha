@@ -23,7 +23,6 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
 
 
 nav {
-
   .logo-wrapper {
     display: inline-block;
     margin: $nav-padding;
@@ -31,9 +30,6 @@ nav {
     height: $nav-dim-inner;
     
     .logo {
-      display: flex;
-      flex-flow: row;
-      align-items: center;
       font-size: $nav-dim-inner * 0.67;
 
       img {
@@ -42,14 +38,11 @@ nav {
       }
 
       .logotype {
-        display: flex;
-        flex-flow: column nowrap;
         min-width: 150px;
       }
 
       .logo-text,
       .logo-text-sub {
-        display: block;
         font-family: Arial, Helvetica, sans-serif;
       }
 
@@ -60,7 +53,6 @@ nav {
       }
 
       .logo-text-sub {
-        display: block;
         font-size: $nav-dim-inner * 0.225;
         line-height: $nav-dim-inner * 0.225;
       }
