@@ -1,25 +1,9 @@
-footer {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-between;
+.site-footer {
   padding: 0.5em;
   background-color: var(--c-footer-bg);
 
-  .left {
+  &__info {
     font-size: var(--fs-sm);
     color: var(--c-footer-text);
-  }
-  
-  a {
-    color: inherit;
-  }
-
-  .license-stamp {
-    display: block;
-    img {
-      display: block;
-      border-radius: 2px;
-    }
   }
 }
