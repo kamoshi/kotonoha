@@ -25,11 +25,11 @@
 @use './components/listing';
 
 // Partials
-@use './partial/footer';
+@use './partials/footer';
 
 // Shortcodes
-@use './shortcode/timeline';
-@use './shortcode/gallery';
-@use './shortcode/tooltip';
+@use './shortcodes/timeline';
+@use './shortcodes/gallery';
+@use './shortcodes/tooltip';
 @use './components/shortcodes';
 
