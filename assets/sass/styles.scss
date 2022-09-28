@@ -24,9 +24,11 @@
 @use './components/aside';
 @use './components/footnotes';
 @use './components/tooltip';
-@use './components/gallery';
+
 @use './components/listing';
 
 // Shortcodes
 @use './shortcode/timeline';
+@use './shortcode/gallery';
 @use './components/shortcodes';
+
