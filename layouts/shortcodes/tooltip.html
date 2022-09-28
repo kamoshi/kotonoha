@@ -2,8 +2,9 @@
   Display tooltip for a given piece of text on mouse hover
 */ -}}
 
-<span class="tooltip">
+<span class="sc-tooltip">
   {{- .Get 0 -}}
-  <span class="tooltip-box">{{- .Get 1 -}}</span>
-  {{- /* remove whitespace */ -}}
+  {{- with .Get 1 -}}
+  <span class="sc-tooltip__box block" role="tooltip">{{- . -}}</span>
+  {{- end -}}
 </span>
