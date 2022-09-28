@@ -22,10 +22,11 @@
 @use './components/github';
 @use './components/aside';
 @use './components/footnotes';
-@use './components/listing';
+
 
 // Partials
 @use './partials/footer';
+@use './partials/listing';
 
 // Shortcodes
 @use './shortcodes/timeline';

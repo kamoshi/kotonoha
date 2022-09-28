@@ -1,16 +1,16 @@
-ul.listing {
+.p-listing {
   line-height: 1.5;
   
-  .return {
+  &__return {
     list-style: url('/static/svg/return.svg');
   }
-  .folder {
+  &__folder {
     list-style: url('/static/svg/folder.svg');
   }
-  .file {
+  &__file {
     list-style: url('/static/svg/file.svg');
   }
-  .size {
+  &__size {
     float: right;
   }
 }
