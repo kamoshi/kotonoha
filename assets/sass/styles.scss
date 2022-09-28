@@ -19,7 +19,6 @@
 @use './components/article';
 @use './components/pagelist';
 @use './components/map';
-@use './components/github';
 @use './components/aside';
 @use './components/footnotes';
 
@@ -27,6 +26,7 @@
 // Partials
 @use './partials/footer';
 @use './partials/listing';
+@use './partials/github';
 
 // Shortcodes
 @use './shortcodes/timeline';
