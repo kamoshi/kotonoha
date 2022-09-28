@@ -19,8 +19,6 @@
 @use './components/footer';
 @use './components/article';
 @use './components/pagelist';
-@use './components/shortcodes';
-@use './components/timeline';
 @use './components/map';
 @use './components/github';
 @use './components/aside';
@@ -28,3 +26,7 @@
 @use './components/tooltip';
 @use './components/gallery';
 @use './components/listing';
+
+// Shortcodes
+@use './shortcode/timeline';
+@use './components/shortcodes';
