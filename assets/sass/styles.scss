@@ -19,14 +19,13 @@
 @use './components/article';
 @use './components/pagelist';
 @use './components/map';
-@use './components/aside';
 @use './components/footnotes';
-
 
 // Partials
 @use './partials/footer';
 @use './partials/listing';
 @use './partials/github';
+@use './partials/card';
 
 // Shortcodes
 @use './shortcodes/timeline';

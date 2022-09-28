@@ -22,13 +22,25 @@ main {
   }
 }
 
-.card {
-  padding: 1em;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: var(--shadow-l);
 
-  h2 {
+aside {
+  flex-shrink: 0;
+  max-width: 40em;
+  margin-top: 3em;
+
+  @media (min-width: consts.$bp-lg) {
+    width: 24em;
     margin-top: 0;
+    margin-left: 3em;
+  }
+
+  section {
+    margin-top: 1em;
+
+    @media (min-width: consts.$bp-md) {
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 }

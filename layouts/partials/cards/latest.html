@@ -1,0 +1,9 @@
+<section class="p-card p-card-latest">
+  <h2 class="p-card__header">Latest</h2>
+  <div class="p-card-latest__pages">
+    {{- range $.Site.RegularPages | first 5 -}}
+    <span>{{- .PublishDate.Format "Jan 2" -}}</span>
+    <a href="{{- .RelPermalink -}}">{{- .Title -}}</a>
+    {{- end -}}
+  </div>
+</section>

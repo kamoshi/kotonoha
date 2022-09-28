@@ -1,8 +1,8 @@
 {{- with .Site.Params.aside.notice -}}
-<section class="card notice">
-  <h2>{{- .Header -}}</h2>
+<section class="p-card">
+  <h2 class="p-card__header">{{- .Header -}}</h2>
   {{- range .Content -}}
-    <p>{{- . -}}</p>
+  <p>{{- . -}}</p>
   {{- end -}}
 </section>
 {{- end -}}

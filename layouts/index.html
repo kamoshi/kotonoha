@@ -3,6 +3,11 @@
   {{.Content}}
 </article>
 
-{{- partial "aside/index" . -}}
+<aside>
+  {{- partial "cards/notice" . -}}
+  {{- partial "cards/latest" . -}}
+  {{- partial "cards/image" . -}}
+  {{- partial "cards/contact" . -}}
+</aside>
 
 {{- end -}}
