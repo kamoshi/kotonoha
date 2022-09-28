@@ -16,7 +16,6 @@
 
 // Components
 @use './components/navbar';
-@use './components/footer';
 @use './components/article';
 @use './components/pagelist';
 @use './components/map';
@@ -24,6 +23,9 @@
 @use './components/aside';
 @use './components/footnotes';
 @use './components/listing';
+
+// Partials
+@use './partial/footer';
 
 // Shortcodes
 @use './shortcode/timeline';
