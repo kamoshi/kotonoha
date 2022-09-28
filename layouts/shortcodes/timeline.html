@@ -4,37 +4,36 @@
 */ -}}
 
 {{- with index .Site.Data.timeline (.Get 0) -}}
-<div class="timeline">
-  <div class="wrapper">
+<div class="sc-timeline">
+  {{- range . -}}
+  <section class="sc-timeline__year">
+    <h3 class="sc-timeline__year-header sticky font-medium">{{- .year -}}</h3>
 
-    {{- range . -}}
-    <section class="year">
-      <h3>{{ .year }}</h3>
-
+    <div class="sc-timeline__year-container">
       {{- with .events -}}
-      <section>
-        <ul>
-        {{- range . -}}
-          <li>{{ . }}</li>
-        {{- end -}}
-        </ul>
-      </section>
-      {{- end -}}
-
-      {{- range .months -}}
-      <section>
-        <h4>{{- .month -}}</h4>
-        <ul>
-          {{- range .events -}}
-          <li>{{- . | emojify | markdownify -}}</li>
+      <section class="sc-timeline__year-events">
+        <ul class="sc-timeline__list">
+          {{- range . -}}
+          <li class="sc-timeline__list-item">{{- . -}}</li>
           {{- end -}}
         </ul>
       </section>
       {{- end -}}
+  
+      {{- range .months -}}
+      <section class="sc-timeline__month">
+        <h4 class="sc-timeline__month-header font-medium">{{- .month -}}</h4>
+        <ul class="sc-timeline__list">
+          {{- range .events -}}
+          <li class="sc-timeline__list-item">{{- . | emojify | markdownify -}}</li>
+          {{- end -}}
+        </ul>
+      </section>
+      {{- end -}}
+    </div>
 
-    </section>
-    {{- end -}}
-    
-  </div>
+  </section>
+  {{- end -}}
+  
 </div>
 {{- end -}}

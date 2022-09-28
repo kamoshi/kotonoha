@@ -1,78 +1,68 @@
-.timeline {
+.sc-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
   position: relative;
-  display: table;
-  height: 100%;
+  max-width: fit-content;
   margin: 1em auto;
 
-  .wrapper::after {
+  &::after {
     content: '';
     position: absolute;
-    z-index: 1;
     top: 0;
-    bottom: 0;
-    width: 3px;
-    left: 3.25em;
+    left: 3.5em;
+    z-index: 1;
+    width: 0.15em;
+    height: 100%;
     margin-top: 0.7em;
     background: var(--c-timeline-bg);
   }
 
-  h3 {
-    position: sticky;
-    margin: 0;
-    top: 1em;
-    font-weight: 400;
-    font-size: var(--fs-lg);
-    color: var(--c-primary);
-  }
-
-  h4 {
-    padding: 0 0 0 4.5em;
-    margin: 0 0 0.5em 0;
-    font-weight: 400;
-    color: var(--c-text-muted);
-  }
-
-  .year > section {
+  &__year {
+    display: flex;
+    gap: 2em;
     position: relative;
-    margin-top: -1.5em;
-    margin-bottom: 2.2em;
 
-    &:last-child{
-      margin-bottom: 1.2em;
+    &-header {
+      position: sticky;
+      top: 1em;
+      align-self: flex-start;
+      margin: 0;
+      font-size: var(--fs-lg);
+      color: var(--c-primary);
     }
-  }
 
-  ul {
-    list-style-type: none;
-    padding: 0 0 0 4.2em;
-    margin-top: 0;
-    max-width: 32em;
-
-    &:first-of-type::after {
+    &::after {
       content: '';
       position: absolute;
+      left: 3.25em;
+      top: 0.5em;
       z-index: 2;
-      left: 3.05em;
-      top: 0.6em;
-      width: 11px;
-      height: 11px;
+      width: 0.6em;
+      height: 0.6em;
+      border-radius: 9999px;
       background: var(--c-primary);
       border: 2px solid var(--c-white);
-      border-radius: 50%;
+    }
+  }
+  &__month {
+    margin-bottom: 0.5em;
+    
+    &-header {
+      margin: 0;
+      color: var(--c-text-muted);
     }
   }
 
-  li {
-    margin-left: 0rem;
-    
-    &:before {
+  &__list {
+    margin-top: 0;
+    max-width: 28em;
+    list-style-type: none;
+
+    &-item::before {
       content: '·';
       margin-left: -0.5rem;
       padding-right: 0.3rem;
-    }
-    
-    &:not(:last-child) {
-      margin-bottom: 0.5rem;
     }
   }
 }
