@@ -1,19 +1,13 @@
 <nav class="p-nav">
-  <div class="p-nav__logo">
-    <a href="/" class="p-nav__logo-wrap">
-      <img class="p-nav__logo-icon" height="48px" width="51px" src="/static/svg/aya.svg" alt="">
-      <div class="p-nav__logo-logotype">
-        <div class="p-nav__logo-main">{{- .Site.Title -}}</div>
-        {{- with .Site.Params.header.subtitle -}}
-        <div class="p-nav__logo-sub">
-          <div class="p-nav__logo-typing">
-            <div id="p-nav-splash" aria-hidden="true">{{ . }}</div>
-          </div>
-        </div>
-        {{- end -}}
-      </div>
-    </a>
-  </div>
+  <a href="/" class="p-nav__logo">
+    <img height="48px" width="51px" src="/static/svg/aya.svg" alt="">
+    <div class="p-nav__logo-text">
+      <div class="p-nav__logo-main">{{- .Site.Title -}}</div>
+      {{- with .Site.Params.header.subtitle -}}
+      <div class="p-nav__logo-sub" id="p-nav-splash">{{- . -}}</div>
+      {{- end -}}
+    </div>
+  </a>
 
   <input id="p-nav-toggle" type="checkbox" hidden>
   <label class="p-nav__burger" for="p-nav-toggle" tabindex="0">

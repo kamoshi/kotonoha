@@ -20,15 +20,6 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
   background-color: var(--c-white);
 }
 
-#p-nav-splash {
-  margin-right: auto;
-  overflow: hidden;
-  white-space: nowrap;
-  animation:
-    typing 1.25s steps(20, end) forwards,
-    blink-caret .75s step-end 4;
-}
-
 #p-nav-toggle:checked {
   ~ .p-nav__burger .p-nav__burger-icon {
     background-color: transparent;
@@ -59,43 +50,37 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
     display: flex;
   }
 
-  /** Logotype block */
   &__logo {
-    display: inline-block;
-    margin: $nav-padding;
-    margin-right: (2 * $nav-padding);
-    height: $nav-dim-inner;
-    
-    &-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    max-height: 4em;
+    padding: 0.5em;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+  
+    &-text {
       display: flex;
-      align-items: center;
-      font-size: $nav-dim-inner * 0.67;
-      color: white;
-      text-decoration: none;
-    }
-  
-    &-icon {
-      height: $nav-dim-inner;
-      margin-right: $nav-padding;
-    }
-  
-    &-logotype {
-      font-family: Arial, Helvetica, sans-serif;
+      flex-direction: column;
+      gap: 0.25em;
     }
   
     &-main {
-      font-size: $nav-dim-inner * 0.67;
-      line-height: $nav-dim-inner * 0.67;
-      margin: 1px 0;
+      font-size: 2rem;
+      line-height: 1em;
     }
   
     &-sub {
-      font-size: $nav-dim-inner * 0.225;
-      line-height: $nav-dim-inner * 0.225;
-    }
-  
-    &-typing {
-      display: inline-block;
+      align-self: flex-start;
+      max-width: max-content;
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 0.675rem;
+      line-height: 1em;
+      animation:
+        typing 1.25s steps(20, end) forwards,
+        blink-caret .75s step-end 4;
     }
   }
 
