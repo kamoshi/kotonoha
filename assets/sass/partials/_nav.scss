@@ -1,23 +1,16 @@
 @use '../consts' as consts;
 
 
-// colors
-$nav-color-link: #3b4850;
-$nav-color-link-hover: #fafafa;
-
-// dimensions
-$nav-dim-height: 4rem;
-$nav-dim-inner: calc(3 / 4 * $nav-dim-height);
-$nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
-
+%burger-line {
+  height: 0.15em;
+  width: 100%;
+  background-color: var(--c-white);
+}
 
 %burger-wing {
   content: "";
   position: absolute;
-  height: 3px;
-  width: 100%;
   transition: transform 100ms ease-in-out;
-  background-color: var(--c-white);
 }
 
 #p-nav-toggle:checked {
@@ -25,11 +18,11 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
     background-color: transparent;
 
     &::before {
-      transform: translateY(1rem) rotateZ(45deg);
+      transform: translateY(0.8rem) rotateZ(45deg);
     }
 
     &::after {
-      transform: translateY(-1rem) rotateZ(-45deg);
+      transform: translateY(-0.8rem) rotateZ(-45deg);
     }
   }
 
@@ -64,7 +57,6 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
     &-text {
       display: flex;
       flex-direction: column;
-      gap: 0.25em;
     }
   
     &-main {
@@ -78,7 +70,7 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
       overflow: hidden;
       white-space: nowrap;
       font-size: 0.675rem;
-      line-height: 1em;
+      line-height: 1.2em;
       animation:
         typing 1.25s steps(20, end) forwards,
         blink-caret .75s step-end 4;
@@ -117,14 +109,13 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
   }
 
   &__burger {
-    display: inline-flex;
-    float: right;
-    margin: $nav-padding;
-    height: $nav-dim-inner;
-    width: $nav-dim-inner;
+    display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0.8);
+    float: right;
+    height: 4rem;
+    width: 4rem;
+    padding: 1rem;
     cursor: pointer;
 
     @media (min-width: consts.$bp-md) {
@@ -133,20 +124,19 @@ $nav-padding: calc(($nav-dim-height - $nav-dim-inner) * 0.5);
 
     &-icon {
       position: relative;
-      display: block;
-      height: 3px;
-      width: 80%;
-      background-color: var(--c-white);
       transition: background-color 100ms linear;
-  
+      @extend %burger-line;
+      
       &::before {
+        top: -0.8rem;
+        @extend %burger-line;
         @extend %burger-wing;
-        top: -1rem;
       }
   
       &::after {
+        top: 0.8rem;
+        @extend %burger-line;
         @extend %burger-wing;
-        top: 1rem;
       }
     }
   }
