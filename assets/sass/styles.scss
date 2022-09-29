@@ -15,13 +15,13 @@
 @use './common/p';
 
 // Components
-@use './components/navbar';
 @use './components/article';
 @use './components/pagelist';
 @use './components/map';
 @use './components/footnotes';
 
 // Partials
+@use './partials/nav';
 @use './partials/footer';
 @use './partials/listing';
 @use './partials/github';
