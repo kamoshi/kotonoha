@@ -14,7 +14,7 @@
 }
 
 #p-nav-toggle:checked {
-  ~ .p-nav__burger .p-nav__burger-icon {
+  ~ .p-nav__bar .p-nav__burger-icon {
     background-color: transparent;
 
     &::before {
@@ -44,11 +44,16 @@
     gap: 0.5em;
   }
 
+  &__bar {
+    display: flex;
+    justify-content: space-between;
+    height: 4em;
+  }
+
   &__logo {
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
-    max-height: 4em;
     padding: 0.5em;
     color: white;
     text-decoration: none;
@@ -93,8 +98,8 @@
 
     &-link {
       display: block;
-      padding: 0.2rem 0.3rem;
-      font-size: 18px;
+      padding: 0.2em 0.3em;
+      font-size: 1.2rem;
       text-decoration: none;
       color: var(--c-white);
   
@@ -112,10 +117,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    float: right;
-    height: 4rem;
-    width: 4rem;
-    padding: 1rem;
+    width: 4em;
+    padding: 1em;
     cursor: pointer;
 
     @media (min-width: consts.$bp-md) {
