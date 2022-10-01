@@ -1,8 +1,7 @@
 // Config
-@use './reset';
 @use './root';
+@use './reset';
 @use './base';
-@use './layout';
 @use './chroma';
 @use './utils';
 
@@ -15,10 +14,8 @@
 @use './common/p';
 
 // Components
-@use './components/article';
-@use './components/pagelist';
+@use './components/post';
 @use './components/map';
-@use './components/footnotes';
 
 // Partials
 @use './partials/nav';
@@ -26,6 +23,8 @@
 @use './partials/listing';
 @use './partials/github';
 @use './partials/card';
+@use './partials/header';
+@use './partials/pagelist';
 
 // Shortcodes
 @use './shortcodes/timeline';
@@ -33,3 +32,8 @@
 @use './shortcodes/tooltip';
 @use './components/shortcodes';
 
+// Layouts
+@use './layouts/home';
+@use './layouts/files';
+@use './layouts/pages';
+@use './layouts/article';

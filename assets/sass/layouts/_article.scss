@@ -1,0 +1,32 @@
+@use '../consts' as consts;
+
+
+.l-article {
+  padding: 1.5em;
+
+  @media (min-width: consts.$bp-lg) {
+    display: grid;
+    grid-template-columns: 10em 1fr 10em;
+    grid-template-areas: "left main right";
+  }
+
+  &__aside {
+    grid-area: left;
+    display: none;
+    position: relative;
+
+    @media (min-width: consts.$bp-lg) {
+      display: block;
+    }
+  }
+
+  &__toc {
+    position: sticky;
+    top: 1.5em;
+  }
+
+  &__article {
+    grid-area: main;
+    margin: 0 auto;
+  }
+}

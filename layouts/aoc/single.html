@@ -1,15 +1,8 @@
-{{ define "main" }}
-<article class="marker center">
-  <header>
-    <h1>{{.Title}}</h1>
-    <div class="tag-line">
-      <span class="date">
-        {{- .Date.Format "January 2, 2006" -}}
-      </span>
-      {{- partial "aoc/stars" . -}}
-      {{- partial "tags" . -}}
-    </div>
-  </header>
-  {{ .Content }}
-</article>
-{{ end }}
+{{- define "main" -}}
+<main class="l-article">
+  <article class="l-article__article marker">
+    {{ partial "headers/aoc" . }}
+    {{ .Content }}
+  </article>
+</main>
+{{- end -}}

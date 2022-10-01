@@ -18,10 +18,6 @@ article {
   line-height: 1.6em;
   font-size: var(--fs-md);
 
-  &.center {
-    margin: 0 auto;
-  }
-
   &.marker {
 
     &::before {

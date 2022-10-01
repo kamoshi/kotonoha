@@ -1,19 +1,8 @@
-{{ define "main" }}
-  <article class="list center tech">
-    <header>
-      <h1>{{ .Title }}</h1>
-    </header>
-
-    {{.Content}}
-
-    <div class="list-container">
-      {{ range .Pages }}
-        <span class="date">{{ time.Format "Jan 02, 2006" .Date }}</span>
-        <a href="{{.Permalink}}">{{.Title}}</a>
-        {{- partial "tech" . -}}
-      {{ end }}
-    </div>
-
+{{- define "main" -}}
+<main class="l-pages">
+  <article class="l-pages__list">
+    {{- partial "headers/simple" . -}}
+    {{- partial "pagelists/tech" . -}}
   </article>
-{{ end }}
-
+</main>
+{{- end -}}

@@ -1,0 +1,7 @@
+<div class="p-pagelist p-pagelist-aoc">
+  {{- range .Pages.ByParam "year" -}}
+    {{- partial "utils/aoc/totalstars" . -}}
+    <a href="{{- .Permalink -}}">{{- .Title -}}</a>
+    {{- partial "tech" . -}}
+  {{- end -}}
+</div>
