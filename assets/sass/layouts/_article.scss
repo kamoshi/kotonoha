@@ -2,13 +2,14 @@
 
 
 .l-article {
+  position: relative;
   padding: 1.5em;
 
   @media (min-width: consts.$bp-lg) {
     display: grid;
-    grid-template-columns: 15em 1fr auto;
-    grid-template-areas: "left main right";
-    gap: 1em;
+    grid-template-columns: 15em 1fr;
+    grid-template-areas: "left main";
+    gap: 1.5em;
   }
 
   @media (min-width: consts.$bp-xl) {
@@ -17,17 +18,17 @@
 
   &__aside {
     display: none;
-    position: relative;
-    grid-area: left;
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    margin: -1.5em 0;
+    padding: 1.5em 1.5em 1.5em 0;
+    overflow-y: auto;
 
     @media (min-width: consts.$bp-lg) {
       display: block;
+      grid-area: left;
     }
-  }
-
-  &__toc {
-    position: sticky;
-    top: 1.5em;
   }
 
   &__article {
