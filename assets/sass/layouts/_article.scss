@@ -7,7 +7,7 @@
 
   @media (min-width: consts.$bp-lg) {
     display: grid;
-    grid-template-columns: 15em 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-areas: "left main";
     gap: 1.5em;
   }
@@ -22,8 +22,10 @@
     top: 0;
     height: fit-content;
     max-height: 100vh;
+    width: fit-content;
+    max-width: 15em;
     margin: -1.5em 0;
-    padding: 1.5em 1.5em 1.5em 0;
+    padding: 1.5em 0;
     overflow-y: auto;
 
     @media (min-width: consts.$bp-lg) {
