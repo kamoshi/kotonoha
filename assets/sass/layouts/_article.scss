@@ -6,14 +6,19 @@
 
   @media (min-width: consts.$bp-lg) {
     display: grid;
-    grid-template-columns: 10em 1fr 10em;
+    grid-template-columns: 15em 1fr auto;
     grid-template-areas: "left main right";
+    gap: 1em;
+  }
+
+  @media (min-width: consts.$bp-xl) {
+    grid-template-columns: 15em 1fr 15em;
   }
 
   &__aside {
-    grid-area: left;
     display: none;
     position: relative;
+    grid-area: left;
 
     @media (min-width: consts.$bp-lg) {
       display: block;
