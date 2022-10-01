@@ -1,11 +1,11 @@
 {{- define "main" -}}
-<main class="l-article readable">
+<main class="l-article">
   <aside class="l-article__aside">
     <div class="l-article__toc">
       {{- partial "toc" . -}}
     </div>
   </aside>
-  <article class="l-article__article marker">
+  <article class="l-article__article marker readable">
     {{- partial "headers/aoc" . -}}
     <div class="markdown">
       {{- .Content -}}
