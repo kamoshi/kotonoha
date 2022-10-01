@@ -4,19 +4,10 @@
 @use './base';
 @use './chroma';
 @use './utils';
-
-// Common
-@use './common/blockquote';
-@use './common/code';
-@use './common/heading';
-@use './common/list';
-@use './common/table';
-@use './common/p';
+@use './markdown';
 
 // Components
-@use './components/post';
 @use './components/map';
-@use './components/shortcodes';
 
 // Partials
 @use './partials/nav';

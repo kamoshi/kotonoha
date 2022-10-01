@@ -5,9 +5,11 @@
       {{- partial "toc" . -}}
     </div>
   </aside>
-  <article class="l-article__article">
+  <article class="l-article__article marker readable">
     {{- partial "headers/article" . -}}
-    {{- .Content -}}
+    <div class="markdown">
+      {{- .Content -}}
+    </div>
   </article>
 </main>
 {{- end -}}

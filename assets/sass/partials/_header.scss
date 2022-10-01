@@ -1,4 +1,47 @@
 .p-header {
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  box-shadow: var(--shadow-l);
+  background: var(--momiji);
+  background-color: var(--c-purewhite);
+  
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+  }
+
+  .tag-line {
+    font-size: var(--fs-sm);
+    line-height: 1.2em;
+
+    .date {
+      margin-right: 0.2em;
+    }
+
+    ul {
+      display: inline;
+      margin-left: 0.5em;
+      list-style: none;
+  
+      li {
+        display: inline-block;
+      }
+  
+      a {
+        display: block;
+        border-radius: 0.4em;
+        padding: 0.1em 0.25em;
+        margin-right: 0.25em;
+        text-decoration: none;
+        line-height: 1em;
+        font-size: var(--fs-xs);
+        background-color: var(--c-purewhite);
+        border: 2px solid var(--c-primary);
+      }
+    }
+  }
+
   &-tech {
     display: flex;
     flex-flow: row nowrap;
