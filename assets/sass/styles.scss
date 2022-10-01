@@ -16,6 +16,7 @@
 // Components
 @use './components/post';
 @use './components/map';
+@use './components/shortcodes';
 
 // Partials
 @use './partials/nav';
@@ -25,12 +26,12 @@
 @use './partials/card';
 @use './partials/header';
 @use './partials/pagelist';
+@use './partials/toc';
 
 // Shortcodes
 @use './shortcodes/timeline';
 @use './shortcodes/gallery';
 @use './shortcodes/tooltip';
-@use './components/shortcodes';
 @use './shortcodes/sidenote';
 
 // Layouts

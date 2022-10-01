@@ -1,10 +1,9 @@
 {{- define "main" -}}
 <main class="l-article">
   <aside class="l-article__aside">
-    <section class="l-article__toc">
-      <h2>Contents</h2>
-      {{- .TableOfContents -}}
-    </section>
+    <div class="l-article__toc">
+      {{- partial "toc" . -}}
+    </div>
   </aside>
   <article class="l-article__article">
     {{- partial "headers/article" . -}}
