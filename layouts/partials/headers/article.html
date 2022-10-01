@@ -1,0 +1,10 @@
+<header class="p-header">
+  <h1 class="p-header__heading">{{- .Title -}}</h1>
+  <div class="tag-line">
+    <span class="date">
+      {{- .Date.Format "January 2, 2006" -}}
+    </span>
+    {{- partial "utils/tags" . -}}
+  </div>
+  {{- partial "github" . -}}
+</header>

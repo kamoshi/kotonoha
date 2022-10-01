@@ -1,15 +1,15 @@
 {{- define "main" -}}
-<article class="marker center">
-  <header>
-    <h1>{{- .Title -}}</h1>
-    <div class="tag-line">
-      <span class="date">
-        {{- .Date.Format "January 2, 2006" -}}
-      </span>
-      {{- partial "tags" . -}}
+<main class="l-article">
+  <aside class="l-article__aside">
+    <div class="l-article__toc">
+      {{- partial "toc" . -}}
     </div>
-    {{- partial "github" . -}}
-  </header>
-  {{- .Content -}}
-</article>
+  </aside>
+  <article class="l-article__article marker readable">
+    {{- partial "headers/article" . -}}
+    <div class="markdown">
+      {{- .Content -}}
+    </div>
+  </article>
+</main>
 {{- end -}}

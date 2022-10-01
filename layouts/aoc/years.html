@@ -1,15 +1,8 @@
 {{- define "main" -}}
-<article class="list center aoc">
-  <header>
-    <h1>{{- .Title -}}</h1>
-  </header>
-
-  <div class="list-container">
-    {{- range .Pages.ByParam "year" -}}
-      {{- partial "aoc/totalstars" . -}}
-      <a href="{{- .Permalink -}}">{{- .Title -}}</a>
-      {{- partial "tech" . -}}
-    {{- end -}}
-  </div>
-</article>
+<main class="l-pages">
+  <article class="l-pages__list readable">
+    {{- partial "headers/simple" . -}}
+    {{- partial "pagelists/aoc/all" . -}}
+  </article>
+</main>
 {{- end -}}

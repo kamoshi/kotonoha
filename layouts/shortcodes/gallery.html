@@ -1,16 +1,14 @@
 {{- $relPath := .Get "path" -}}
 {{- $resources := .Page.Resources.Match (path.Join $relPath "*" ) -}}
 
-<section class="gallery">
-  <h2 id="gallery">Gallery</h2>
-  <div class="container">
+<section class="sc-gallery">
+  <div class="sc-gallery__container">
     {{- range where $resources "MediaType.MainType" "image" -}}
-    {{- $context := . -}}
-    {{- with .Resize "500x" -}}
-    <a class="item" href="{{- $context.RelPermalink -}}">
-      <img src="{{- .RelPermalink -}}" width="{{- .Width -}}" height="{{- .Height -}}">
+    <a class="sc-gallery__item block" href="{{- .RelPermalink -}}">
+      {{- with .Fill "200x200 center" -}}
+      <img class="sc-gallery__image block" src="{{- .RelPermalink -}}" width="{{- .Width -}}" height="{{- .Height -}}">
+      {{- end -}}
     </a>
-    {{- end -}}
     {{- end -}}
   </div>
 </section>

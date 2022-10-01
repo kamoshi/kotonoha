@@ -1,29 +1,32 @@
 // Config
-@use './reset';
 @use './root';
+@use './reset';
 @use './base';
-@use './layout';
-
-// Common
-@use './common/blockquote';
-@use './common/code';
-@use './common/heading';
-@use './common/list';
-@use './common/table';
-@use './common/p';
+@use './chroma';
+@use './utils';
+@use './markdown';
 
 // Components
-@use './components/navbar';
-@use './components/footer';
-@use './components/article';
-@use './components/pagelist';
-@use './components/shortcodes';
-@use './components/timeline';
-@use './components/chroma';
 @use './components/map';
-@use './components/github';
-@use './components/aside';
-@use './components/footnotes';
-@use './components/tooltip';
-@use './components/gallery';
-@use './components/listing';
+
+// Partials
+@use './partials/nav';
+@use './partials/footer';
+@use './partials/listing';
+@use './partials/github';
+@use './partials/card';
+@use './partials/header';
+@use './partials/pagelist';
+@use './partials/toc';
+
+// Shortcodes
+@use './shortcodes/timeline';
+@use './shortcodes/gallery';
+@use './shortcodes/tooltip';
+@use './shortcodes/sidenote';
+
+// Layouts
+@use './layouts/home';
+@use './layouts/files';
+@use './layouts/pages';
+@use './layouts/article';

@@ -1,17 +1,8 @@
-{{ define "main" }}
-  <article class="list languages center">
-    <header>
-      {{ with index $.Site.Data.tech (default "unknown" .Title) }}
-        <img class="lang-logo" src="{{ .file }}">
-        <h1>{{ .name }}</h1>
-      {{ end }}
-    </header>
-
-    <div class="list-container">
-      {{ range .Pages }}
-        <span class="date">{{ time.Format "Jan 02, 2006" .Date }}</span>
-        <a href="{{.Permalink}}">{{.Title}}</a>
-      {{ end }}
-    </div>
+{{- define "main" -}}
+<main class="l-pages">
+  <article class="l-pages__list readable">
+    {{- partial "headers/tech" . -}}
+    {{- partial "pagelists/simple" . -}}
   </article>
-{{ end }}
+</main>
+{{- end -}}

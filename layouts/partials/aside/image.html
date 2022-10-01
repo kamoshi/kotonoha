@@ -1,8 +1,0 @@
-{{- with .Site.Params.aside.image -}}
-<section class="card image">
-  <h2>Image of the Month</h2>
-  {{ $img := resources.Get .src }}
-  {{ $img := $img.Resize "600x jpg Lanczos" }}
-  <img src="{{$img.RelPermalink}}" width="{{$img.Width}}" height="{{$img.Height}}" alt="{{.alt}}">
-</section>
-{{- end -}}

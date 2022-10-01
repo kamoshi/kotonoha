@@ -1,29 +1,19 @@
-<h2>Index of {{ print "/" (path.Dir .File.Path) "/" -}}</h2>
-
-<hr />
-
-<ul class="listing">
+<h1>Index of {{ print "/" (path.Dir .File.Path) "/" -}}</h1>
+<hr>
+<ul class="p-listing">
   {{- $super := print "/" (path.Dir (path.Dir .File.Path)) "/" -}}
-  <li class="return">
-    <a href="{{- $super -}}">..</a>
-  </li>
+  <li class="p-listing__return"><a href="{{- $super -}}">..</a></li>
 
   {{- range .Pages -}}
-  <li class="folder">
-    <a href="{{- .RelPermalink -}}">
-      {{- path.Base (path.Dir .File.Path) -}}
-    </a>
+  <li class="p-listing__folder">
+    <a href="{{- .RelPermalink -}}">{{- path.Base (path.Dir .File.Path) -}}</a>
   </li>
   {{- end -}}
 
   {{- range .Resources -}}
-  <li class="file">
-    <a href="{{- .RelPermalink -}}">
-      {{- .Name -}}
-    </a>
-    <span class="size">
-      {{- len .Content }} bytes
-    </span>
+  <li class="p-listing__file">
+    <a href="{{- .RelPermalink -}}">{{- .Name -}}</a>
+    <span class="p-listing__size">{{- len .Content }} bytes</span>
   </li>
   {{- end -}}
 </ul>

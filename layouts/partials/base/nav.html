@@ -1,0 +1,25 @@
+<nav class="p-nav">
+  <input id="p-nav-toggle" type="checkbox" hidden>
+  
+  <div class="p-nav__bar">
+    <a href="/" class="p-nav__logo">
+      <img height="48px" width="51px" src="/static/svg/aya.svg" alt="">
+      <div class="p-nav__logo-text">
+        <div class="p-nav__logo-main">{{- .Site.Title -}}</div>
+        {{- with .Site.Params.header.subtitle -}}
+        <div class="p-nav__logo-sub" id="p-nav-splash">{{- . -}}</div>
+        {{- end -}}
+      </div>
+    </a>
+
+    <label class="p-nav__burger" for="p-nav-toggle" tabindex="0">
+      <div class="p-nav__burger-icon"></div>
+    </label>
+  </div>
+  
+  <menu class="p-nav__menu">
+    {{- range sort .Site.Menus.main "Weight" -}}
+    <li class="p-nav__menu-item"><a class="p-nav__menu-link" href="{{- .URL -}}">{{- .Name | title -}}</a></li>
+    {{- end -}}
+  </menu>
+</nav>

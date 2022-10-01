@@ -1,8 +1,14 @@
 {{- define "main" -}}
-<article>
-  {{.Content}}
-</article>
+<main class="l-home">
+  <article class="l-home__article markdown readable">
+    {{- .Content -}}
+  </article>
 
-{{- partial "aside/index" . -}}
-
+  <aside class="l-home__aside">
+    {{- partial "cards/notice" . -}}
+    {{- partial "cards/latest" . -}}
+    {{- partial "cards/image" . -}}
+    {{- partial "cards/contact" . -}}
+  </aside>
+</main>
 {{- end -}}

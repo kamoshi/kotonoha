@@ -1,6 +1,6 @@
-{{ define "main"}}
-<div>
-  <h1 id="title">404 Page not found</h1>
-  <a href='{{ "/" | relURL }}'>Go back</a>
-</div>
-{{ end }}
+{{- define "main" -}}
+<main>
+  <h1>404 Page not found</h1>
+  <a href='{{- "/" | relURL -}}'>Go back</a>
+</main>
+{{- end -}}
