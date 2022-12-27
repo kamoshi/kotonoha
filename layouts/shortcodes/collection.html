@@ -1,0 +1,23 @@
+{{- /*
+  Displays a collection table.
+  Input: data file name in the "collections" directory
+*/ -}}
+{{- with index .Site.Data.collections (.Get 0) -}}
+{{- range . -}}
+  <h3>{{- .name -}}</h3>
+  <table>
+    <thead>
+      <th>Title</th>
+      <th>Have</th>
+    </thead>
+    <tbody>
+      {{- range .items -}}
+      <tr>
+        <td>{{- .name -}}</td>
+        <td>{{- if .have -}}Yes{{- else -}}No{{- end -}}</td>
+      </tr>
+      {{- end -}}
+    </tbody>
+  </table>
+{{- end -}}
+{{- end -}}
