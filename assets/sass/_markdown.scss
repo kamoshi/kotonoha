@@ -1,3 +1,19 @@
+.md-heading {
+  &__link {
+    opacity: 0.5;
+
+    &:hover,
+    &:focus-within {
+      opacity: 1;
+    }
+  }
+  &__icon {
+    display: inline;
+    max-height: 0.8em;
+    width: auto;
+  }
+}
+
 .markdown {
   p > img,
   > img {
