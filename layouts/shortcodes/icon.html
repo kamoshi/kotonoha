@@ -1,8 +1,8 @@
-{{ $staticPathPre := path.Join "/static/static/" (.Get "src") }}
-{{ $staticPathPost := path.Join "/static/" (.Get "src") }}
+{{- $staticPathPre := path.Join "/static/static/" (.Get "src") -}}
+{{- $staticPathPost := path.Join "/static/" (.Get "src") -}}
 
-{{ if fileExists $staticPathPre }}
-  <img class="icon" src='{{ $staticPathPost }}' width='{{ (.Get "w") }}' height='{{ (.Get "h") }}'>
-{{ else }}
-  {{ warnf "Icon not found: %s" $staticPathPost }}
-{{ end }}
+{{- if fileExists $staticPathPre -}}
+  <img class="sc_icon" src='{{- $staticPathPost -}}' width='{{- (.Get "w") -}}' height='{{- (.Get "h") -}}'>
+{{- else -}}
+  {{- warnf "Icon not found: %s" $staticPathPost -}}
+{{- end -}}
