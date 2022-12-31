@@ -1,4 +1,0 @@
-{{ $context := . }}
-{{ with $.Page.Resources.GetMatch (.Get 0) }}
-  <img width="{{ ($context.Get 1) }}" height="{{ ($context.Get 2) }}" src='{{ .RelPermalink }}'>
-{{ end }}

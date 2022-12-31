@@ -12,7 +12,6 @@
 // Partials
 @use './partials/nav';
 @use './partials/footer';
-@use './partials/listing';
 @use './partials/github';
 @use './partials/card';
 @use './partials/header';
@@ -31,6 +30,5 @@
 
 // Layouts
 @use './layouts/home';
-@use './layouts/files';
 @use './layouts/pages';
 @use './layouts/article';
