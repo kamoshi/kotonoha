@@ -2,10 +2,10 @@
   This is rendered as the h1-h6 headings in markdown text.
 */ -}}
 
-<h {{- .Level }} class="md-heading" id="{{- .Anchor | safeURL -}}">
+<h {{- .Level }} class="md_heading" id="{{- .Anchor | safeURL -}}">
   <span>{{- .Text | safeHTML -}}</span>
-  <a class="md-heading__link" href="#{{- .Anchor | safeURL -}}">
+  <a class="md_heading__link" href="#{{- .Anchor | safeURL -}}">
     {{- /* whitespace */ -}}
-    <img class="md-heading__icon" width="123" height="123" src="/static/svg/hyperlink.svg">
+    <img class="md_heading__icon" width="123" height="123" src="/static/svg/hyperlink.svg">
   </a>
 </h {{- .Level -}}>

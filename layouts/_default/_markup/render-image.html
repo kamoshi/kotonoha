@@ -1,0 +1,5 @@
+{{- /* 
+  This is rendered as img in markdown text.
+*/ -}}
+
+<img class="md_image" src="{{- .Destination | safeURL -}}" alt="{{- .Text -}}" {{- with .Title}} title="{{- . -}}"{{- end -}} />

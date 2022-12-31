@@ -1,33 +1,33 @@
-.md-heading {
-  margin: 1em 0 0.5em 0;
 
-  &__link {
-    opacity: 0.5;
-
-    &:hover,
-    &:focus-within {
-      opacity: 1;
+.md {
+  &_heading {
+    margin: 1em 0 0.5em 0;
+  
+    &__link {
+      opacity: 0.5;
+  
+      &:hover,
+      &:focus-within {
+        opacity: 1;
+      }
+    }
+    &__icon {
+      display: inline;
+      max-height: 0.8em;
+      width: auto;
     }
   }
-  &__icon {
-    display: inline;
-    max-height: 0.8em;
-    width: auto;
+  
+  &_image{
+    display: block;
+    max-width: 100%;
+    max-height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .markdown {
-  p > img,
-  > img {
-    display: block;
-    max-width: 100%;
-    max-height: 50vh;
-    margin: {
-      left: auto;
-      right: auto;
-    }
-  }
-
   > table {
     margin: 1em auto 1em auto;
     border-collapse: collapse;
