@@ -1,10 +1,8 @@
 <header class="p-header">
   <h1 class="p-header__heading">{{.Title}}</h1>
-  <div class="tag-line">
-    <span class="date">
-      {{- .Date.Format "January 2, 2006" -}}
-    </span>
+  <div class="p-header__meta">
     {{- partial "utils/aoc/stars" . -}}
-    {{- partial "utils/tags" . -}}
+    {{- partial "date" . -}}
+    {{- partial "tags" . -}}
   </div>
 </header>

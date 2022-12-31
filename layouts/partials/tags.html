@@ -1,0 +1,17 @@
+{{- /*
+  Tags displayed within article header.
+*/ -}}
+
+{{- if or (.Params.Tech) (.Params.Tags) -}}
+<section class="p_tags">
+  <img class="p_tags__icon" width="123" height="105" src="/static/svg/tags.svg">
+  <ul class="p_tags__list">
+    {{- range .Params.Tech -}}
+      <li><a href="/tech/{{- . | urlize -}}">{{- . -}}</a></li>
+    {{- end -}}
+    {{- range .Params.Tags -}}
+      <li><a href="/tags/{{- . | urlize -}}">{{- . -}}</a></li>
+    {{- end -}}
+  </ul>
+</section>
+{{- end -}}

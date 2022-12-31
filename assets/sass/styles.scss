@@ -18,6 +18,8 @@
 @use './partials/header';
 @use './partials/pagelist';
 @use './partials/toc';
+@use './partials/date';
+@use './partials/tags';
 
 // Shortcodes
 @use './shortcodes/timeline';

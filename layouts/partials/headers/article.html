@@ -1,11 +1,8 @@
 <header class="p-header">
   <h1 class="p-header__heading">{{- .Title -}}</h1>
-  <div class="tag-line">
-    <span class="date">
-      <img class="date-icon" width="120" height="123" src="/static/svg/calendar.svg">
-      <span>&nbsp;{{- .Date.Format "January 2, 2006" -}}</span>
-    </span>
-    {{- partial "utils/tags" . -}}
+  <div class="p-header__meta">
+    {{- partial "date" . -}}
+    {{- partial "tags" . -}}
   </div>
   {{- partial "github" . -}}
 </header>
