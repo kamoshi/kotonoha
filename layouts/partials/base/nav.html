@@ -21,5 +21,8 @@
     {{- range sort .Site.Menus.main "Weight" -}}
     <li class="p-nav__menu-item"><a class="p-nav__menu-link" href="{{- .URL -}}">{{- .Name | title -}}</a></li>
     {{- end -}}
+    {{- with .Site.Params.header.search -}}
+    <li class="p-nav__menu-item"><a class="p-nav__menu-link" href="{{.}}">Search</a></li>
+    {{- end -}}
   </menu>
 </nav>

@@ -46,7 +46,6 @@
 
   &__bar {
     display: flex;
-    justify-content: space-between;
     height: 4em;
   }
 
@@ -54,6 +53,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
+    margin-right: auto;
     padding: 0.5em;
     color: white;
     text-decoration: none;
